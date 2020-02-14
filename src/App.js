@@ -9,10 +9,10 @@ import {
 import logo from './logo.svg';
 import './App.css';
 
-
 import Greeting from './components/classes';
 import Button from './components/button';
 import Clock from './components/clock';
+import Actionlight from './components/handleEvent'
 
 class App extends React.Component {
   constructor(props) {
@@ -65,6 +65,7 @@ class App extends React.Component {
                 </Route>
                 <Route path="/INRI8">
                   <h1>Manejo de Eventos</h1>
+                  <Actionlight/>
                 </Route>
               </Switch>
             </div>
