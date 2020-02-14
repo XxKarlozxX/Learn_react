@@ -5,9 +5,8 @@ class Greeting extends React.Component {
     render() {
       return (
         <div>
+          <h1>Hello from a class component</h1>
           <Welcome name={this.props.name} />
-          <p>This is the begin of something Great!</p>
-          <p>I think!</p>
         </div>
       );
     }
