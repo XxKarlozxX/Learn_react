@@ -8,11 +8,13 @@ import {
 
 import logo from './logo.svg';
 import './App.css';
+import Users from './util/Person';
 
 import Greeting from './components/classes';
 import Button from './components/button';
 import Clock from './components/clock';
 import Actionlight from './components/handleEvent'
+import Card from './components/card';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +52,9 @@ class App extends React.Component {
                   <li>
                     <Link to="/INRI8">Manejo de Eventos</Link>
                   </li>
+                  <li>
+                    <Link to="/INRI9">Renderizado Condicional</Link>
+                  </li>
                 </ul>
               </nav>
 
@@ -66,6 +71,15 @@ class App extends React.Component {
                 <Route path="/INRI8">
                   <h1>Manejo de Eventos</h1>
                   <Actionlight/>
+                </Route>
+                <Route path="/INRI9">
+                  <div className="card-ui">
+                  {
+                    Users.map( (person) => {
+                      return <Card user={person} />;
+                    })
+                  }
+                  </div>
                 </Route>
               </Switch>
             </div>

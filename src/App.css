@@ -76,3 +76,120 @@
     transform: rotate(360deg);
   }
 }
+
+
+/***** card Styles *****/
+.card-ui {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+.card {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 280px;
+  position: relative;
+}
+
+.card .ribbon.label{
+  border-radius: 0 .28571429rem .28571429rem 0;
+  color: #fff;
+  padding: 5px 0px;
+  position: absolute;
+  top: 1rem;
+  min-width: max-content;
+}
+
+.card .ribbon.label.black {
+  background-color: #000;
+  border-color: #805031;
+}
+
+.card .ribbon.label.blue {
+  background-color: #2185d0;
+  border-color: #1a69a4;
+}
+
+.card .ribbon.label.teal {
+  background-color: #009c95;
+  border-color: #00827c;
+}
+.card .ribbon.label.red {
+  background-color: #db2828;
+  border-color: #b21e1e;
+}
+
+.ribbon.label:after{
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  background-color: transparent!important;
+  border-style: solid;
+  border-width: 0 1.2em 1.2em 0;
+  border-color: transparent;
+  border-right-color: inherit;
+  width: 0;
+  height: 0;
+}
+
+.card .ribbon.label {
+  left: calc(-0.2rem - 1em);
+  margin-right: -1.2em;
+  padding-left: calc(1rem + 1.2em);
+  padding-right: 1.2em;
+}
+.card img {
+  width: 100%;
+}
+
+.card .content {
+  padding: 10px;
+}
+
+.card .content .header {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.card .content .meta {
+  margin-bottom: 10px;
+  font-weight: lighter;
+  font-size: smaller;
+  text-align: left;
+}
+
+.card .content .description {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.card .extra {
+  display: block;
+  border-top: 1px solid #ccc;
+  font-size: smaller;
+  clear: both;
+  overflow: hidden;
+}
+
+.card .extra span {
+  float: left;
+}
+
+.card .extra .right {
+  float: right;
+}
+
+.message {
+
+  border-top: 1px solid #1a531b;
+  border-bottom: 1px solid #1a531b;
+  background-color: #bfddb0;
+  color: #1a531b;
+}
+
