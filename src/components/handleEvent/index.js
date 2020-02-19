@@ -20,7 +20,6 @@ class Actionlight extends React.Component {
 
     changeBackground() {
         let position = Math.floor(Math.random() * 9);
-         
         document.body.style.color = ( position !== 0 ) ? '#fff' : '#000';
         document.body.style.backgroundColor = this.color[position];
     }

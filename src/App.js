@@ -40,7 +40,7 @@ class App extends React.Component {
             <img src={logo} className="App-logo" alt="logo"/>
             <h1>React JS - Aprendizaje</h1>
           </div>
-        
+
           <Router>
             <div>
               <nav>
