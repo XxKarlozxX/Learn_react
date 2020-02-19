@@ -15,6 +15,7 @@ import Button from './components/button';
 import Clock from './components/clock';
 import Actionlight from './components/handleEvent'
 import Card from './components/card';
+import ListPerson from './components/lists'
 
 class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,9 @@ class App extends React.Component {
                   <li>
                     <Link to="/INRI9">Renderizado Condicional</Link>
                   </li>
+                  <li>
+                    <Link to="/INRI10">Listas & keys</Link>
+                  </li>
                 </ul>
               </nav>
 
@@ -76,10 +80,17 @@ class App extends React.Component {
                   <div className="card-ui">
                   {
                     Users.map( (person) => {
-                      return <Card user={person} />;
+                      return <Card key={person.rol} user={person} />;
                     })
                   }
                   </div>
+                </Route>
+                <Route path="/INRI10">
+                  <h1>Listas y Keys</h1>
+                  <div>
+                    Characters are obtained of <a href="https://rickandmortyapi.com/">https://rickandmortyapi.com/</a>
+                  </div>
+                  <ListPerson />
                 </Route>
               </Switch>
             </div>

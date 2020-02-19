@@ -169,6 +169,10 @@
   margin-bottom: 15px;
 }
 
+.card .content ul.description {
+  list-style-type: none;
+}
+
 .card .extra {
   display: block;
   border-top: 1px solid #ccc;
