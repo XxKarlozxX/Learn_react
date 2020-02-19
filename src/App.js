@@ -16,6 +16,7 @@ import Clock from './components/clock';
 import Actionlight from './components/handleEvent'
 import Card from './components/card';
 import ListPerson from './components/lists'
+import SelectList from './components/forms/selectForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -59,6 +60,9 @@ class App extends React.Component {
                   <li>
                     <Link to="/INRI10">Listas & keys</Link>
                   </li>
+                  <li>
+                    <Link to="/INRI11">Componentes controlados</Link>
+                  </li>
                 </ul>
               </nav>
 
@@ -91,6 +95,10 @@ class App extends React.Component {
                     Characters are obtained of <a href="https://rickandmortyapi.com/">https://rickandmortyapi.com/</a>
                   </div>
                   <ListPerson />
+                </Route>
+                <Route path="/INRI11">
+                  <h1>Selector de personajes</h1>
+                  <SelectList />
                 </Route>
               </Switch>
             </div>

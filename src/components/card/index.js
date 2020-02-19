@@ -30,7 +30,7 @@ class Card extends React.Component {
     return (
       <div className="card">
         <div className="image">
-          <div class={`${colorRibbon} ribbon label`}>
+          <div className={`${colorRibbon} ribbon label`}>
           { this.props.user.rol }
           </div>
           <img src={this.props.user.url_img} alt="Person"/>
@@ -51,7 +51,7 @@ class Card extends React.Component {
             </span>
           </div> 
         ) : (
-          <div class="extra content message">
+          <div className="extra content message">
             <p>You are in <b>training</b> for now.</p>
           </div>
         )
