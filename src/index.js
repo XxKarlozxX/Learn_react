@@ -1,3 +1,6 @@
+/* It important to skip this line when make deploy tyo production */
+//import 'react-devtools';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

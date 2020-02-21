@@ -48,28 +48,28 @@ class App extends React.Component {
               <nav className="menu">
                 <ul>
                   <li>
-                    <Link to="/INRI6">Componente Funcional & clases</Link>
+                    <Link className="active" to="/INRI6">Ejercicio 1</Link>
                   </li>
                   <li>
-                    <Link to="/INRI7">Estado y ciclo de vida</Link>
+                    <Link to="/INRI7">Ejercicio 2</Link>
                   </li>
                   <li>
-                    <Link to="/INRI8">Manejo de Eventos</Link>
+                    <Link to="/INRI8">Ejercicio 3</Link>
                   </li>
                   <li>
-                    <Link to="/INRI9">Renderizado Condicional</Link>
+                    <Link to="/INRI9">Ejercicio 4</Link>
                   </li>
                   <li>
-                    <Link to="/INRI10">Listas & keys</Link>
+                    <Link to="/INRI10">Ejercicio 5</Link>
                   </li>
                   <li>
-                    <Link to="/INRI11">Componentes controlados</Link>
+                    <Link to="/INRI11">Ejercicio 6</Link>
                   </li>
                   <li>
-                    <Link to="/INRI12">Levantar estado</Link>
+                    <Link to="/INRI12">Ejercicio 7</Link>
                   </li>
                   <li>
-                    <Link to="/INRI13">Composicion vs Herencia</Link>
+                    <Link to="/INRI13">Ejercicio 8</Link>
                   </li>
                 </ul>
               </nav>
