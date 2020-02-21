@@ -9,7 +9,7 @@
 }
 
 .App-logo {
-  height: 20vmin;
+  height: 17vmin;
   pointer-events: none;
 }
 
@@ -50,7 +50,12 @@
   }
 }
 
-/*.header {
+.main-header {
+  display: flex;
+  align-items: center;
+}
+/*
+.main-header {
   height: 30vmin;
   color: #fff;
   background-color: #1d688e;
@@ -58,6 +63,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 50% 40px;
+  width: 80%;
+}
+
+.main-header h1 {
+  font-size: 7vmin;
 }
 */
 
@@ -83,7 +93,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
 }
 .card {
   border: 1px solid #ccc;
@@ -197,3 +206,94 @@
   color: #1a531b;
 }
 
+/***** MNavbar Styles *****/
+.menu {
+  margin: 25px 0px;
+  width: 100%;
+}
+
+.menu > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.menu > ul li {
+  margin: 15px;;
+} 
+
+.menu > ul li a {
+  background-color: #1d688e;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px #000;
+  color: #fff;
+  font-weight: 500;
+  padding: 7px;
+  text-decoration: none;
+  width: 100%;
+}
+
+/******* Composicion ******/
+.panel-chemistry {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25px;
+  border: 5px solid fuchsia;
+  border-radius: 10px;
+}
+
+.recipient,
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  width: 80%;
+  margin: 15px 0px;
+}
+
+.recipient {
+  border: 5px solid red;
+}
+
+.panel {
+  border: 5px solid yellow;
+  padding: 15px;
+}
+
+.panel label{
+  width: 45%;
+  margin: 0px 25px;
+  font-weight: bold;
+}
+
+.panel label input[type="text"],
+.panel label input[type="number"] {
+  padding: 4px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.panel input[type="submit"] {
+  margin: 15px 0px;
+  padding: 5px;
+  width: 80%;
+}
+
+.compound {
+  border: 5px solid cyan;
+  padding: 25px;
+  width: 95%;
+}
+
+.compound .element{
+  display: inline-block;
+  color: #fff;
+  border-radius: 50%;
+  height: 81px;
+  margin: -10px;
+  padding: 15px;
+  width: 81px;
+}

@@ -17,6 +17,8 @@ import Actionlight from './components/handleEvent'
 import Card from './components/card';
 import ListPerson from './components/lists'
 import SelectList from './components/forms/selectForm';
+import Calculator from './components/liftingState';
+import Panel from './components/composition';
 
 class App extends React.Component {
   constructor(props) {
@@ -36,14 +38,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-          <div className="header">
+          <div className="main-header">
             <img src={logo} className="App-logo" alt="logo"/>
             <h1>React JS - Aprendizaje</h1>
           </div>
 
           <Router>
             <div>
-              <nav>
+              <nav className="menu">
                 <ul>
                   <li>
                     <Link to="/INRI6">Componente Funcional & clases</Link>
@@ -62,6 +64,12 @@ class App extends React.Component {
                   </li>
                   <li>
                     <Link to="/INRI11">Componentes controlados</Link>
+                  </li>
+                  <li>
+                    <Link to="/INRI12">Levantar estado</Link>
+                  </li>
+                  <li>
+                    <Link to="/INRI13">Composicion vs Herencia</Link>
                   </li>
                 </ul>
               </nav>
@@ -99,6 +107,22 @@ class App extends React.Component {
                 <Route path="/INRI11">
                   <h1>Selector de personajes</h1>
                   <SelectList />
+                </Route>
+                <Route path="/INRI12">
+                  <h1>Levantamiento de estado</h1>
+                  <div className="card-ui">
+                    <Calculator />
+                  </div>
+                </Route>
+                <Route path="/INRI13">
+                  <h1>Composición</h1>
+                  <div className="card-ui">
+                    <Panel>
+                      <h2>Compuestos Quimicos</h2>
+                      <p>(agregado con props children.)</p>
+                      <em>Se podrian agregar Instrucciones en este punto para no modificar la funcionalidad.</em>
+                    </Panel>
+                  </div>
                 </Route>
               </Switch>
             </div>
