@@ -19,6 +19,7 @@ import ListPerson from './components/lists'
 import SelectList from './components/forms/selectForm';
 import Calculator from './components/liftingState';
 import Panel from './components/composition';
+import TodoApp from './TodoApp';
 
 class App extends React.Component {
   constructor(props) {
@@ -70,6 +71,9 @@ class App extends React.Component {
                   </li>
                   <li>
                     <Link to="/INRI13">Ejercicio 8</Link>
+                  </li>
+                  <li>
+                    <Link to="/INRI14">React - Redux</Link>
                   </li>
                 </ul>
               </nav>
@@ -123,6 +127,9 @@ class App extends React.Component {
                       <em>Se podrian agregar Instrucciones en este punto para no modificar la funcionalidad.</em>
                     </Panel>
                   </div>
+                </Route>
+                <Route path="/INRI14">
+                  <TodoApp />
                 </Route>
               </Switch>
             </div>
