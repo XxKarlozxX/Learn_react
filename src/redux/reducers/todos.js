@@ -25,11 +25,14 @@ export default function(state = initialState, action) {
             const { id } = action.payload;
             return {
                 ...state,
-                [id]: {
-                    ...state.byIds[id],
-                    completed: !state.byIds[id].completed
+                byIds: {
+                    ...state.byIds,
+                    [id]: {
+                        ...state.byIds[id],
+                        completed: !state.byIds[id].completed
+                    }
                 }
-            };
+            };            
         }
         default:
             return state;

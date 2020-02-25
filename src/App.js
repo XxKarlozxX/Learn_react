@@ -129,7 +129,9 @@ class App extends React.Component {
                   </div>
                 </Route>
                 <Route path="/INRI14">
-                  <TodoApp />
+                  <div className="card-ui">
+                    <TodoApp />
+                  </div>
                 </Route>
               </Switch>
             </div>

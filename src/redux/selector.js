@@ -1,10 +1,12 @@
+import { VISIBILITY_FILTERS } from "../constants";
+
+export const getTodosState = store => store.todos;
+
 export const getTodoList = store =>
-    store && store.todos ? store.todos.allIds : [];
+    getTodosState(store) ? getTodosState(store).allIds : [];
 
 export const getTodoById = (store, id) => 
-    store && store.todos && store.todos.byIds
-      ? {...store.todos.byIds[id]. id }
-      : {};
+    getTodosState(store) ? {...getTodosState(store).byIds[id], id } : {};
 
 /**
  * example of a slightly more comlex selector
@@ -12,3 +14,17 @@ export const getTodoById = (store, id) =>
  */
 export const getTodos = store =>
   getTodoList(store).map( id => getTodoById(store, id));
+
+
+export const getTodosByVisibilityFilter = (store, VisibilityFilter) => {
+    const allTodos = getTodos(store);
+    switch(VisibilityFilter) {
+        case VISIBILITY_FILTERS.COMPLETED:
+            return allTodos.filter(todo => todo.completed );
+        case VISIBILITY_FILTERS.INCOMPLETE:
+            return allTodos.filter( todo => !todo.completed);
+        case VISIBILITY_FILTERS.ALL:
+        default:
+            return allTodos;
+    }
+};
