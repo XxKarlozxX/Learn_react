@@ -8,12 +8,25 @@ import App from './App';
 
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
 import * as serviceWorker from './serviceWorker';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { teal, pink} from '@material-ui/core/colors';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#008080',
+        },
+        secondary: pink,
+    },
+});
+  
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
     </Provider>,
     document.getElementById('root')
 );
