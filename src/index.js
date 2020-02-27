@@ -6,21 +6,34 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { rootReducer } from './store/reducer';
 import * as serviceWorker from './serviceWorker';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { teal, pink} from '@material-ui/core/colors';
+import { createStore, applyMiddleware, compose } from 'redux'
 
 const theme = createMuiTheme({
     palette: {
         primary: {
             main: '#008080',
         },
-        secondary: pink,
+        secondary: {
+            main: '#f50057',
+        },
     },
 });
-  
+
+const store = createStore (
+    rootReducer,
+    {},
+    compose(
+        applyMiddleware(promise, thunk),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+);
+
 
 ReactDOM.render(
     <Provider store={store}>

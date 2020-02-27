@@ -4,6 +4,9 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { connect } from 'react-redux'
+import { characters,removeCharacter } from './services/actions/characters'
+import { getCharactersData } from './services/selectors/characters'
 
 import logo from './logo.svg';
 import './App.css';
@@ -20,7 +23,7 @@ import ListPerson from './components/lists'
 import SelectList from './components/forms/selectForm';
 import Calculator from './components/liftingState';
 import Panel from './components/composition';
-import TodoApp from './TodoApp';
+import ImgMediaCard from './containers/ListCharacters';
 
  const options = [
     {
@@ -56,7 +59,7 @@ import TodoApp from './TodoApp';
       link: '/INRI13'
     },
     {
-      title: 'Ejercio 9',
+      title: 'React Redux',
       link: '/INRI14'
     },
   ];
@@ -64,16 +67,24 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state= {
-      activeButton: true
+      activeButton: true,
     };
     this.delButton = this.delButton.bind(this);
+    this.removeChar = this.removeChar.bind(this);
   }
-
 
   delButton() {
     this.setState({
       activeButton: false
     });
+  }
+
+  removeChar(e) {
+    this.props.removeCharacter(e.currentTarget.value)
+  }
+
+  componentDidMount() {
+    this.props.characters();
   }
 
   render() {
@@ -131,8 +142,15 @@ class App extends React.Component {
                     </div>
                   </Route>
                   <Route path="/INRI14">
+                    <h1>Personajes de Rick & Morty</h1>
                     <div className="card-ui">
-                      <TodoApp />
+                      {
+                        this.props.chars.map( chars => {
+                          return(
+                            <ImgMediaCard key={chars.id} character={chars} handleRemove={this.removeChar}/>
+                          );
+                        })
+                      }
                     </div>
                   </Route>
                 </Switch>
@@ -143,4 +161,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(
+  state => ({chars: getCharactersData(state) }),
+  { characters, removeCharacter }
+)(App);

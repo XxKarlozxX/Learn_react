@@ -67,7 +67,7 @@ export default function ClippedDrawer(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-          <Typography paragraph>{props.children}</Typography>
+          {props.children}
       </main>
     </div>
   );
