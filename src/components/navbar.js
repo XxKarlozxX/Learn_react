@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(5),
   },
   toolbar: theme.mixins.toolbar,
 }));
@@ -58,8 +58,8 @@ export default function ClippedDrawer(props) {
         <div className={classes.toolbar} />
         <List>
           {props.options.map((option) => (
-            <ListItem button key={option.title} component={props => <Link to={option.link} {...props} />}>
-              <ListItemIcon> <CheckBoxIcon /> </ListItemIcon>
+            <ListItem button key={option.title} component={Link} to={option.link} >
+              <ListItemIcon>{<CheckBoxIcon /> }</ListItemIcon>
               <ListItemText primary={option.title} />
             </ListItem>
           ))}

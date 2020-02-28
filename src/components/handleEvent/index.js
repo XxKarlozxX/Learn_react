@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 class Actionlight extends React.Component {
     constructor(props){
@@ -27,7 +28,9 @@ class Actionlight extends React.Component {
     render() {
         return(
             <div>
-                <button onClick={this.changeBackground}>Click to Change</button>
+                <Button variant="contained" onClick={this.changeBackground}>
+                    Click to Change
+                </Button>
             </div>
         );
     }

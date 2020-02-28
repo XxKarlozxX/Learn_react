@@ -24,44 +24,49 @@ import SelectList from './components/forms/selectForm';
 import Calculator from './components/liftingState';
 import Panel from './components/composition';
 import ImgMediaCard from './containers/ListCharacters';
+import ContactPage from './containers/redux-forms'
 
- const options = [
+const options = [
     {
-      title: 'Ejercio 1',
+      title: 'Ejercio 1 - INRI6',
       link: '/INRI6'
     },
     {
-      title: 'Ejercio 2',
+      title: 'Ejercio 2 - INRI7',
       link: '/INRI7'
     },
     {
-      title: 'Ejercio 3',
+      title: 'Ejercio 3 - INRI8',
       link: '/INRI8'
     },
     {
-      title: 'Ejercio 4',
+      title: 'Ejercio 4 - INRI9',
       link: '/INRI9'
     },
     {
-      title: 'Ejercio 5',
+      title: 'Ejercio 5 - INRI10',
       link: '/INRI10'
     },
     {
-      title: 'Ejercio 6',
+      title: 'Ejercio 6 - INRI11',
       link: '/INRI11'
     },
     {
-      title: 'Ejercio 7',
+      title: 'Ejercio 7 - INRI12',
       link: '/INRI12'
     },
     {
-      title: 'Ejercio 8',
+      title: 'Ejercio 8 - INRI13',
       link: '/INRI13'
     },
     {
-      title: 'React Redux',
+      title: 'React Redux - INRI14',
       link: '/INRI14'
     },
+    {
+      title: 'Redux Form - INRI15',
+      link: '/INRI15'
+    }
   ];
 class App extends React.Component {
   constructor(props) {
@@ -152,6 +157,9 @@ class App extends React.Component {
                         })
                       }
                     </div>
+                  </Route>
+                  <Route path="/INRI15">
+                    <ContactPage />
                   </Route>
                 </Switch>
               </ClippedDrawer>

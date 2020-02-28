@@ -15,7 +15,7 @@ class ListsPerson extends React.Component {
 
   fillCharacters() {
     const characters = async () => {
-      let response = await getCharacters(5);
+      let response = await getCharacters(10);
       this.setState({
         characters: response
       });
@@ -32,12 +32,11 @@ class ListsPerson extends React.Component {
     return (
       <div className="card-ui">
        {
-         rickChar.map( ( char, i ) => {
+         rickChar.map( ( char ) => {
+           const colorStatus = ( char.status === 'Alive') ? '#1d688e' : '#4e4e4e';
            return (
             <div key={char.id} className="card">
-              <div className="image">
-                <img src={char.image} alt="Person"/>
-              </div>
+
               <div className="content">
                 <div className="header">{char.name}</div>
                 <ul className="description">
@@ -46,7 +45,7 @@ class ListsPerson extends React.Component {
                 </ul>
               </div>
               <div className="extra content">
-                <span className="right floated">
+                <span style={{ borderRadius: '5px',backgroundColor: colorStatus, padding: '5px', color: '#fff'}} className="right floated">
                   Status {char.status}
                 </span>
               </div>   
