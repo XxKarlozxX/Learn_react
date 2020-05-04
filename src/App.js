@@ -12,7 +12,7 @@ import logo from './logo.svg';
 import './App.css';
 import Users from './util/Person';
 
-import ClippedDrawer from './components/navbar';
+import ClippedDrawerWrapped from './components/navbar';
 
 import Greeting from './components/classes';
 import Button from './components/button';
@@ -25,6 +25,7 @@ import Calculator from './components/liftingState';
 import Panel from './components/composition';
 import ImgMediaCard from './containers/ListCharacters';
 import ContactPage from './containers/redux-forms'
+import WrappedComponent from './components/needingLocal';
 
 const options = [
     {
@@ -66,6 +67,10 @@ const options = [
     {
       title: 'Redux Form - INRI15',
       link: '/INRI15'
+    },
+    {
+      title: 'HOC - INRI17',
+      link: '/INRI17'
     }
   ];
 class App extends React.Component {
@@ -96,7 +101,7 @@ class App extends React.Component {
     return (
       <div className="App">
           <Router>
-              <ClippedDrawer options={options} title="Aprendizaje de react">
+              <ClippedDrawerWrapped options={options} title="Aprendizaje de react">
               <img src={logo} className="App-logo" alt="logo"/>
                 <Switch>
                   <Route path="/INRI6">
@@ -161,8 +166,11 @@ class App extends React.Component {
                   <Route path="/INRI15">
                     <ContactPage />
                   </Route>
+                  <Route path="/INRI17">
+                      <WrappedComponent />
+                  </Route>
                 </Switch>
-              </ClippedDrawer>
+              </ClippedDrawerWrapped>
           </Router>
       </div>
     );

@@ -10,20 +10,24 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import ListItemText from '@material-ui/core/ListItemText';
+import withStorage from '../HOC/HOCStorage';
+
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
+    flexGrow: 1,
+  },
+  flex: {
+    flex: 1
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
   },
   drawerPaper: {
     width: drawerWidth,
@@ -31,21 +35,26 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(5),
-  },
-  toolbar: theme.mixins.toolbar,
+  }
 }));
 
-export default function ClippedDrawer(props) {
+function ClippedDrawer(props) {
   const classes = useStyles();
+  const userName = props.load('userName') || '';
+  const nickName = props.load('nickName') || '';
+
 
   return (
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6">
             {props.title}
           </Typography>
+          { ( userName.length > 0  &&  nickName.length > 0 ) &&  
+              <Typography variant="h6" className={classes.flex}>{ userName }@{ nickName }</Typography>
+          }
         </Toolbar>
       </AppBar>
       <Drawer
@@ -72,3 +81,6 @@ export default function ClippedDrawer(props) {
     </div>
   );
 }
+
+const ClippedDrawerWrapped = withStorage(ClippedDrawer);
+export default ClippedDrawerWrapped;

@@ -14,7 +14,6 @@ export default class ContactPage extends Component {
         this.setState({
             values: currentState.concat(values)
         });
-        console.log(values);
     } 
     render() {
         const stateLength = this.state.values.length;
