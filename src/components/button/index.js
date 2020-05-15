@@ -56,7 +56,7 @@ class Button extends React.Component {
   }
    
   componentWillUnmount() {
-    console.log("Desmontado desde el boton")
+    console.log("Desmontado desde el boton" + this.timeID)
     clearTimeout(this.timeID);
     clearTimeout(this.time2ID);
     clearTimeout(this.time3ID);

@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 import { characters,removeCharacter } from './services/actions/characters'
 import { getCharactersData } from './services/selectors/characters'
 
-import logo from './logo.svg';
 import './App.css';
 import Users from './util/Person';
 
@@ -26,6 +25,10 @@ import Panel from './components/composition';
 import ImgMediaCard from './containers/ListCharacters';
 import ContactPage from './containers/redux-forms'
 import WrappedComponent from './components/needingLocal';
+import ButtonCont from './components/buttonCont';
+import SearchEngine from './components/hooks/';
+import ColorMemo from './components/memo';
+import ExpensiveProcess from './components/useMemo';
 
 const options = [
     {
@@ -71,7 +74,24 @@ const options = [
     {
       title: 'HOC - INRI17',
       link: '/INRI17'
-    }
+    },
+    {
+      title: 'Should component update - INRI18',
+      link: '/INRI18'
+    },
+    {
+      title: 'React Memo - INRI19',
+      link: '/INRI19'
+    },
+    {
+      title: 'useMemo - INRI20',
+      link: '/INR20'
+    },
+    {
+      title: 'Hooks - INRI120',
+      link: '/INRI111'
+    },
+   
   ];
 class App extends React.Component {
   constructor(props) {
@@ -102,7 +122,6 @@ class App extends React.Component {
       <div className="App">
           <Router>
               <ClippedDrawerWrapped options={options} title="Aprendizaje de react">
-              <img src={logo} className="App-logo" alt="logo"/>
                 <Switch>
                   <Route path="/INRI6">
                     <Greeting name="Friends" />
@@ -168,6 +187,27 @@ class App extends React.Component {
                   </Route>
                   <Route path="/INRI17">
                       <WrappedComponent />
+                  </Route>
+                  <Route path="/INRI18">
+                    <h1>Should Component Update</h1>
+                    <div className="card-ui">
+                      <ButtonCont />
+                    </div>
+                  </Route>
+                  <Route path="/INRI19">
+                    <h1>React.Memo</h1>
+                    <div className="card-ui">
+                      <ColorMemo />
+                    </div>
+                  </Route>
+                  <Route path="/INR20">
+                    <h1>useMemo</h1>
+                    <div className="card-ui">
+                      <ExpensiveProcess />
+                    </div>
+                  </Route>
+                  <Route path="/INRI111">
+                      <SearchEngine />
                   </Route>
                 </Switch>
               </ClippedDrawerWrapped>

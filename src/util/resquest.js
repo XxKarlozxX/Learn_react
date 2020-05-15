@@ -33,3 +33,21 @@ export async function getCharacters( numberOfItems ) {
     return characters;
 }
 
+
+export async function getMovieData( movieName ) {
+
+    var movieData = [];
+    const url = 'http://www.omdbapi.com/?apikey=913c1515';
+        movieData.push(
+            await axios.get( url, {
+                params: {
+                  t: movieName
+                }
+            }).then((response) => {
+                return response.data;
+            }).catch( (error) => {
+                return error;
+            })
+        );
+    return movieData;
+}

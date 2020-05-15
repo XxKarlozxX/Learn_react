@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.main {
+  width: 75%;
+  margin-left: 20%;
+  border: 3px solid green;
+}
+
 .App {
   text-align: center;
 }
