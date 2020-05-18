@@ -20,13 +20,11 @@ function Cuadrito(props) {
 
 function areEqual(prevProps, nextProps) {
     if (nextProps.colorKey === prevProps.colorKey) {
-        console.log("render again");
+        console.log("No Render");
         return true;
     }
-    console.log("No render");
+    console.log("Render Again");
     return false;
 }
 
 export default React.memo(Cuadrito, areEqual);
-
-//export default Cuadrito;
